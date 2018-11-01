@@ -1,0 +1,297 @@
+Feature:
+In order to work 
+As a KYC Wealth Manager
+I want to Login
+
+Scenario 1: Logging in KYC
+Given I navigate to KYC application
+And I  enter Username as "kyc.admin" And Password as "kyc1234"
+And I click on Sign In
+Then login should be successful
+
+Scenario 2: Logging out
+Given that I am logged in to KYC application
+And I click on Sign Out
+Then logout should be successful
+And Login Page should be displayed
+
+Scenario 3: Applying for Customer KYC Onboarding
+Given I navigate to KYC application
+When I am on Action tab
+And click on "KYC Customer Onboardin " link
+Then Apply form should be loaded
+And I select Product as "Deposit" And Prodcut Type as "Saving Account" And Product Sub Type as "Regular"
+And I click Product Opted For  as "Home Loan" And Service Opted For as Financial Advisor 
+And click on Apply button
+Then Application Information form should be displayed
+
+Scenario 4: Filling Application Information form
+Given that I am on Application Information form
+When I enter First Name as "KiM" And Last Name as "Brag"
+And I select Date Of Birth as "4/5/1995" And Country Of Residence as "United States" And Present House Status as "Own"
+And I select Residing Since as "4/5/2010" And Length of relationship with Bank as "one to three years" 
+And I enter Social Security Number as "234523"
+And I select Sex as "Female"And Nationality as "Indian" And Marital Status as "Married"
+And I enter Home Phone as "2345432348" And No. of Dependents as "1" And Ages of Dependents as "23"
+And I Select Document Type as "Bank Account Statement"
+And I browse upload File as "Tulip.jpeg"
+And click on Next button
+Then Employment Information form should be displayed
+
+Scenario 5: Employment Information
+Given that I am on Employment Information form 
+When I enter Years employed in this line of work/profession as "3"
+And I select Present Address-Country as "United States" 
+And I enter Present Address-City as "Troy" And Present Address-State as "MI" AndPresent Address-Zipcode as "345674"
+And click on Next button
+Then Income Expense & Assets Liabilities form should be displayed
+
+Scenario 6: Income Expense & Assets Liabilities
+Given that I am on Income Expense & Assets Liabilities form 
+When I enter Salary as "34000"And Bonus as "4500"And Loan EMI as "1200" And Insurance as "450" And Investments as "5670" And Loans Outstanding as "3400" And Creditors as "10000" And Other Liabilities as "6000"
+And I click on Next button
+Then Declaration form should be displayed
+
+Scenario 7:Declaration and Government Monitoring
+Given that I am on Declaration form
+When I select Declarations as "Are you a U.S. citizen?"
+And click on Next button
+Then Government Monitoring form should be displayed
+And I select I wish to furnish this information
+And I select Ethnicity as "Hispanic or Latino" And Race as "White" And Gender as "Female"
+And I clcik on Next button
+Then Senior Foreign Political Figure / Politically Exposed Person form should be displayed
+And I click on Submit button
+
+Scenario 9: News is published
+Given that I am on the NEws tab
+And I find that News 'KYC Application Customer Onboarding Application has been submitted  for  "Kim Brag"-    New Product Details - Estate Planning
+' is published
+
+Scenario 10: Customer Acceptance and Verification: Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on Customer Acceptance and Verification: "Kim Brag" approval link
+Then Customer Acceptance and Verification: "Kim Brag" form should opens
+And I click on Accept button
+Then Customer Acceptance and Verification: "Kim Brag" form should be enabled
+And I Enter Comment as "Approved"
+And I click on Approve button
+Then Customer Acceptance and Verification: "Kim Brag" should be approved successfully.
+
+Scenario 11:Customer Identification & Verification: Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on Customer Identification and Verification: "Kim Brag" approvallink
+Then Customer Identification and Verification: "Kim Brag" form should open
+And I click on Accept button
+Then Customer Identification and Verification: "Kim Brag" form should be enabled
+And I select KYC Verification Status as "KYC Complete"
+And I Enter Comment as "OK"
+And I click on Approve button
+Then Customer Identification and Verification: "Kim Brag" should be approved successfully.
+
+Scenario 12:Credit Approval : Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on Credit Approval : "Kim Brag" approval link
+Then Credit Approval : "Kim Brag" form should open
+And I click on Accept button
+Then Credit Approval : "Kim Brag" form should be enabled
+And I Enter Comment as "OK"
+And I click on Approve button
+Then Credit Approval : "Kim Brag" should be approved successfully.
+
+Scenario 13:Compliance Approval : Kim Brag approval
+Given I navigate to KYC applicatio
+When I am on Taks tab
+And click on Compliance Approval : "Kim Brag" approval link
+Then Compliance Approval : "Kim Brag" form should open
+And I click on Accept button
+Then Compliance Approval : "Kim Brag" form should be enabled
+And I select Type of Business  as "3"
+And Existing Customer as "5"
+And I Enter Comment as "Approved"
+And I click on Approve button
+Then Compliance Approval : "Kim Brag" should be approved successfully.
+
+Scenario 14:LOB Approval : Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on LOB Approval : "Kim Brag" link
+Then LOB Approval : "Kim Brag" form should  open
+And I click on Accept button
+Then LOB Approval : "Kim Brag" form should be enabled
+And I Enter Comment as "ok"
+And I click on Approve button
+Then LOB Approval : "Kim Brag" should be approved successfully.
+
+Scenario 15:Risk Approval : Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on Risk Approval : "Kim Brag" approval link
+Then Risk Approval : "Kim Brag" form should open
+And I click on Accept button
+Then Risk Approval : "Kim Brag" form should be enabled
+And I Enter Comment as "OK"
+And I click on Approve button
+Then Risk Approval : "Kim Brag" should be approved successfully.
+
+Scenario 16: KYC Review and Approval : Kim Brag approval
+Given I navigate to KYC application
+When I am on Taks tab
+And click on KYC Review and Approval : "Kim Brag" approval link
+Then Risk Approval : "Kim Brag" form should open
+And I click on Accept button
+Then Risk Approval : "Kim Brag" form should be enabled
+And I select KYC Approval as "KYC Complete"
+And I Enter Comment as "Ok"
+And I click on Approve button
+Then Risk Approval : "Kim Brag" should be approved successfully.
+
+Scenario 17: Comment is added to News published
+Given that I am on the NEws tab
+And I find that Comment is added to published news as "New Onboarding Application has been approved by Legal Officer -  "KYC Admin" for  "Kim Brag"-Product Details - Regular
+ 
+ 
+========================================================
+
+														
+Scenario 18: Search customer in Bank Customer and go for KYC Wealth Management System
+Given I navigate to KYC application
+When I Navigate to Records tab
+And I click on Bank Customer
+Then Bank Customers page should get loaded
+And I enter  Search Bank Customer as "Kim Brag" And hit enter key from keyboard
+Then entered Customer should be searched and shown
+And I click on the "Kim Brag" link And KYC Wealth Management System button
+Then Product Selection form should be displayed
+
+Scenario 19:KYC Wealth Management System- Product selection
+Given  I am on Product selection form
+And I select Product as "Deposit" And Prodcut Type as "Saving Account" And Product Sub Type as "Regular" 
+And I click Product Opted For  as "Deposit Services" And I Service Opted For as "Wealth Advisor" 
+And click on Apply button
+Then Application Information form should be displayed
+
+Scenario 20:KYC Wealth Management System-Application Information
+Given I am on Application Information form
+And I select Present address- Country as "United States" 
+And I enter Present address- City as  "Troy" And Present address- State as 	"MI" And Present address- Zipcode as "234345"
+And I click on Next button
+Then Employment Information form should be displayed
+
+Scenario 21:KYC Wealth Management System-Employment Information
+Given  I am on Employment Information form 
+And click on Next button
+Then Income Expense & Assets Liabilities form should be displayed
+
+Scenario 22: KYC Wealth Management System-Income Expense & Assets Liabilities
+Given I am on Income Expense & Assets Liabilities form 
+And I enter Creditors as "2500" And Other Liabilities as "4500"
+And I click on Next button
+Then Declaration form should be displayed
+
+Scenario 23:KYC Wealth Management System-Declaration and Government Monitoring
+Given that I am on Declaration form
+When I select Declarations as "Are you a U.S. citizen?"
+And click on Next button
+Then Government Monitoring form should be displayed
+And I select I wish to furnish this information
+And I select Ethnicity as "Hispanic or Latino" And Race as "Asian" And Gender as "Female"
+And I clcik on Next button
+Then Senior Foreign Political Figure / Politically Exposed Person form should be displayed
+And I click on Submit button
+
+Scenario 24: News is published
+Given I navigate to "KYC application"
+When I navigate to News tab
+And I find that News 'Wealth Management Application" WMS Application has been submitted  for "Kim Brag"-Account Number is - 544566457    New Product Details - Regular' is published
+
+Scenario 25: Risk Approval : Kim Brag[544566457] 
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on Customer Acceptance and Verification: "Kim Brag" link
+Then Customer Acceptance and Verification: "Kim Brag" form should get loaded
+And I click on Accept button
+Then Customer Acceptance and Verification: "Kim Brag" form is enabled
+And I Enter Comment as "Approved"
+And I click on Approve button
+Then Customer Acceptance and Verification: "Kim Brag" task is approved successfully.
+
+Scenario 26:Customer Identification & Verification: Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on Customer Identification and Verification: "Kim Brag" link
+Then Customer Identification and Verification: "Kim Brag" form should get loaded
+And I click on Accept button
+Then Customer Identification and Verification: "Kim Brag" form is enabled
+And I select KYC Verification Status as "KYC Complete"
+And I Enter Comment as "Ok"
+And I click on Approve button
+Then Customer Identification and Verification: "Kim Brag" task is approved successfully.
+
+Scenario 27:Credit Approval : Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on Credit Approval : "Kim Brag" link
+Then Credit Approval : "Kim Brag" form should get loaded
+And I click on Accept button
+Then Credit Approval : "Kim Brag" form is enabled
+And I Enter Comment as "Approved"
+And I click on Approve button
+Then Credit Approval : "Kim Brag" task is approved successfully.
+
+Scenario 28:Compliance Approval : Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on Compliance Approval : "Kim Brag" link
+Then Compliance Approval : "Kim Brag" form should get loaded
+And I click on Accept button
+Then Compliance Approval : "Kim Brag" form is enabled
+And I select Type of Business  as "4" And Existing Customer as "8"
+And I Enter Comment as "ok"
+And I click on Approve button
+Then Compliance Approval : "Kim Brag" task is approved successfully.
+
+Scenario 29:LOB Approval : Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on LOB Approval : "Kim Brag" link
+Then LOB Approval : "Kim Brag" form should get loaded
+And I click on Accept button
+Then LOB Approval : "Kim Brag" form is enabled
+And I Enter Comment as "Ok"
+And I click on Approve button
+Then LOB Approval : "Kim Brag" task is approved successfully.
+
+Scenario 30: Customer Acceptance and Verification: Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on Customer Acceptance and Verification: "Kim Brag" link
+Then Customer Acceptance and Verification: "Kim Brag" form should get loaded
+And I click on Accept button
+Then Customer Acceptance and Verification: "Kim Brag" form is enabled
+And I Enter Comment as "ok"
+And I click on Approve button
+Then Customer Acceptance and Verification: "Kim Brag" task is approved successfully.
+
+Scenario 31: KYC Review and Approval : Kim Brag[544566457]
+Given I navigate to "KYC application"
+When I am on Taks tab
+And click on KYC Review and Approval : "Kim Brag" link
+Then Risk Approval : "Kim Brag" form should get loaded
+Then Risk Approval : "Kim Brag" form is enabled
+And I select KYC Approval as "Approve"
+And I Enter Comment as "OK"
+And I click on Approve button
+Then Risk Approval : "Kim Brag" task is approved successfully.
+
+Scenario 32: Comment is added to News published
+Given I navigate to "KYC application"
+When I navigate to News tab
+And I find that Comment is added to published news as 'WMS Application has been approved by Legal Officer -  KYC  Admin for  "Kim Brag"-Account Number - 544566457 Product Details - Regular'
+ 
+ 
+															
+															

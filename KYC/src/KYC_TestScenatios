@@ -1,0 +1,544 @@
+Feature:
+In order to work 
+As a KYC Wealth Manager
+I want to Login
+
+Scenario 1: Logging in KYC
+GIVEN I go to   <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+
+Examples:
+|url| 														|browser|		|Username|		|Password|
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|
+															|Chrome|
+
+
+Scenario 2: Logging out
+GIVEN that I am logged in to <url> on <browser
+AND I click on Sign Out
+Then logout should be successful
+AND Login Page should be displayed
+
+
+
+Scenario 3: Applying for Customer KYC Onboarding
+GIVEN that I am logged in to <url> on <browser>
+WHEN I am on Action tab
+AND click on < applicationlink> link
+THEN < Apply form> should be loaded
+AND I select Product as <product>
+AND I select Prodcut Type as <productType>
+AND I select Product Sub Type as <productSubType>
+AND I click Product Opted For  as <productopted>
+AND I click Service Opted For as <serviceOpted> Wealth Advisor, Financial Advisor
+AND click on Apply button
+THEN Application Information form should be displayed
+
+Examples:
+|product|		|productType|		|productSubType|		|productopted|		|serviceOpted|					
+|Deposit|		|Saving Account|	|Regular|				|Deposit Services|	|Wealth Advisor|				
+									|Hign End|				|Home Loan|			|Financial Advisor|				
+				|Term Deposit|
+|Loan|			|Retail Loans|		|Education|				|Cash Services|		|Wealth Planning Specialist|
+									|Vehicle|				|Insurance|			|Insurance Specialist|
+
+Scenario 4: Filling Application Information form
+GIVEN that I am on Application Information form
+WHEN I enter First Name as <fName>
+AND I enter Last Name as <lName>
+AND I select Date Of Birth as <DOB> 
+AND I select Country Of Residence as <residence>
+AND I select Present House Status as <houseStatus>
+AND I select Residing Since as <residingSince>
+AND I select Length of relationship with Bank as <relationshipwithBank>
+AND I enter Social Security Number as <ssn>
+AND I select Sex as <sex>
+AND I select Nationality as <nationality>
+AND I enter Home Phone as <phone>
+AND I select Marital Status as <maritalStatus>
+AND I select No. of Dependents as <dependents>
+AND I select Ages of Dependents as <dependentAge>
+AND I Select Document Type as <docType>
+AND I browse upload File as <uploadFile>
+AND click on Next button
+THEN Employment Information form should be displayed
+
+Example:
+|fName|			|lName|			|DOB|		|residence|		|houseStatus|		|residingSince|		|relationshipwithBank|		|ssn|		|sex|	|nationality|	|phone|			|maritalStatus|  |dependents|	|dependentAge|	||docType|					|uploadFile|	
+|Daniel|		|Gabriel|		|4/5/1995|	|United States|	|Own|				|4/5/2010| 			|less than one year|		|234876|	|Male|	|Indian|		|234 456 0234|	|Married|		 |1| 			|23|			|Bank Account Statement|	|Tuplis.JPEG|
+|KiM|			|Brag|			|8/3/1992|	|India|			|Rented|			|2/9/1013|			|one to three years|		|657823|	|Female| |Iran|			|238 345 4563|	|Unmarried|		 |2|			|2|				|Telephone Bill|			|Hydrangeas.JPEG|	
+
+
+Scenario 5: Employment Information
+GIVEN that I am on Employment Information form 
+WHEN I enter Years employed in this line of work/profession as <yearsemployed>
+AND I Country as <empcountry>
+AND I select City as <empCity>
+AND I select state as <empState>
+AND I enter Zipcode as <empzipcode>
+AND click on Next button
+THEN Income Expense & Assets Liabilities form should be displayed
+
+
+Examples:
+|yearsemployed|		|empcountry|		|empCity|		|empState|		|empzipcode|
+|3|					|Baharin|			|Quaba|			|Rehad|			|234324|	
+|9|					|Austrelia|			|Melbourn|		|MI|			|567346|			
+
+
+Scenario 6: Income Expense & Assets Liabilities
+GIVEN that I am on Income Expense & Assets Liabilities form 
+WHEN I enter Salary as <salary>
+AND I enter Bonus as <bonus>
+AND I enter Loan EMI as <loanEmi>
+AND I enter Insurance as <insurance>
+AND I enter Investments as <investments>
+AND I enter Loans Outstanding as <loanoutstanding>
+AND I enter Creditors as <Creditors>
+AND I enter Other Liabilities as <otherLiabilities>
+AND I ckick on Next button
+THEN Declaration form is displayed
+
+
+Examples:
+|salary|		|bonus|		|loanEmi|		|insurance|		|investments|		|loanoutstanding|	|Creditors|		|otherLiabilities|
+|60000|			|6890|		|2000|			|678|			|23000|				|14000|				|3400|			|1200|
+|98000|			|9874|		|3421|			|640|			|12000|				|8000|				|32300|			|5600|
+
+Scenario 7:Declaration and Government Monitoring
+GIVEN that I am on Declaration form
+WHEN I select Declarations as <declarations>
+AND click on Next button
+THEN Government Monitoring form is displayed
+AND I select I wish to furnish this information
+AND I select Ethnicity as <ethnicity>
+AND I select Race as <race>
+AND I select Gender as<gender>
+AND I clcik on Next button
+THEN Senior Foreign Political Figure / Politically Exposed Person form is displayed
+AND I click on Submit button
+
+Examples:
+|declarations|						|ethnicity|				|race|		|gender|
+|Are you a U.S. citizen?|			|Hispanic or Latino|	|Asian|		|Male|
+|Are you a party to a lawsuit?|		|Not Hispanic or Latino||White|		|Female|
+
+Scenario 9: News is published
+GIVEN that I am on the NEws tab
+AND I find that News 'KYC Application Customer Onboarding Application has been submitted  for  <fName lName>-    New Product Details - Estate Planning
+' is published
+
+
+Scenario 10: Customer Acceptance and Verification: Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Customer Acceptance and Verification: <fName lName> link
+THEN Customer Acceptance and Verification: <fName lName> form opens
+AND I click on Accept button
+THEN Customer Acceptance and Verification: <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Customer Acceptance and Verification: <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|						
+
+Scenario 11:Customer Identification & Verification: Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Customer Identification and Verification: <fName lName> link
+THEN Customer Identification and Verification: <fName lName> form opens
+AND I click on Accept button
+THEN Customer Identification and Verification: <fName lName> form is enabled
+AND I select KYC Verification Status as <KycVeriStatus>
+AND I Enter Comment as <comment>
+AND I click on Approve button
+Then Customer Identification and Verification: <fName lName> is approved successfully.
+
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|			|KycVeriStatus|			|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|		|KYC Complete|			|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|			|KYC Expired|			|approved|							
+
+Scenario 12:Credit Approval : Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Credit Approval : <fName lName> link
+THEN Credit Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Credit Approval : <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Credit Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|							
+
+
+Scenario 13:Compliance Approval : Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Compliance Approval : <fName lName> link
+THEN Compliance Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Compliance Approval : <fName lName> form is enabled
+AND I select Type of Business  as <businessType>
+AND Existing Customer as <existingCust>
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Compliance Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|businessType|	|existingCust|	|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|3|				|3|				|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|4|				|4|				|approved|							
+
+
+Scenario 14:LOB Approval : Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on LOB Approval : <fName lName> link
+THEN LOB Approval : <fName lName> form opens
+AND I click on Accept button
+THEN LOB Approval : <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then LOB Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|							
+
+
+Scenario 15:Risk Approval : Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Risk Approval : <fName lName> link
+THEN Risk Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Risk Approval : <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Risk Approval : <fName lName> is approved successfully.
+
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|							
+
+Scenario 16: KYC Review and Approval : Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on KYC Review and Approval : <fName lName> link
+THEN Risk Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Risk Approval : <fName lName> form is enabled
+AND I select KYC Approval as <kycApproval>
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Risk Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|kycApproval|	|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|Approve|				|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|Reject|				|approved|							
+	
+Scenario 17: Comment is added to News published
+GIVEN that I am on the NEws tab
+AND I find that Comment is added to published news as '<Username New Onboarding Application has been approved by Legal Officer -  <Username> for  <fName lName>-Product Details - Estate Planning'
+ 
+
+														
+Scenario 18: Serach customer in Bank Cutomer and go for KYC Wealth Management System
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Records tab
+AND I click on Bank Customer
+Then Bank Customers page opens
+AND I enter  Search Bank Customer as <fname/lName>
+AND hit enter key from keyboard
+THEN entered Customer should be searched and shown
+AND I click on the <fname fName> link
+AND I click on KYC Wealth Management System button
+THEN Product Selection form should loaded
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|			
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|		
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		
+
+Scenario 19:KYC Wealth Management System- Product selection
+GIVEN that I am on Product selection form
+AND I select Product as <product>
+AND I select Prodcut Type as <productType>
+AND I select Product Sub Type as <productSubType>
+AND I click Product Opted For  as <productopted>
+AND I click Service Opted For as <serviceOpted> Wealth Advisor, Financial Advisor
+AND click on Apply button
+THEN Application Information form should be displayed
+
+Examples:
+|product|		|productType|		|productSubType|		|productopted|		|serviceOpted|					
+|Deposit|		|Saving Account|	|Regular|				|Deposit Services|	|Wealth Advisor|				
+									|Hign End|				|Home Loan|			|Insurance Specialist|				
+				|Term Deposit|
+|Loan|			|Retail Loans|		|Education|				|Cash Services|		|Wealth Planning Specialist|
+									|Vehicle|				|Insurance|			|Insurance Specialist|
+
+Scenario 20:KYC Wealth Management System-Application Information
+GIVEN that I am on Application Information form
+AND I select Present address- Country as <preaddCountry>
+AND I enter Present address- City as  <preaddCity>
+AND I enter Present address- State as 	<preaddState>
+AND I enter Present address- Zipcode as <preaddZipcode>
+AND I click on Next button
+THEN Employment Information form should be displayed
+
+
+Examples:
+|preaddcountry|		|preaddCity|		|preaddState|		|preaddZipcode| 	|creditors|		|otherLiabilities|
+|United States|		|Troy|			|MI|			|234324|	
+|Austrelia|			|Melbourn|		|CI|			|567346|	
+
+Scenario 21:KYC Wealth Management System-Employment Information
+GIVEN that I am on Employment Information form 
+AND click on Next button
+THEN Income Expense & Assets Liabilities form should be displayed
+
+
+Scenario 22: KYC Wealth Management System-Income Expense & Assets Liabilities
+GIVEN that I am on Income Expense & Assets Liabilities form 
+AND I enter Creditors as <Creditors>
+AND I enter Other Liabilities as <otherLiabilities>
+AND I click on Next button
+THEN Declaration form is displayed
+
+Examples:
+|Creditors|		|otherLiabilities|
+|3400|			|1200|
+|32300|			|5600|
+
+Scenario 23:KYC Wealth Management System-Declaration and Government Monitoring
+GIVEN that I am on Declaration form
+WHEN I select Declarations as <declarations>
+AND click on Next button
+THEN Government Monitoring form is displayed
+AND I select I wish to furnish this information
+AND I select Ethnicity as <ethnicity>
+AND I select Race as <race>
+AND I select Gender as<gender>
+AND I clcik on Next button
+THEN Senior Foreign Political Figure / Politically Exposed Person form is displayed
+AND I click on Submit button
+
+Examples:
+|declarations|						|ethnicity|				|race|		|gender|
+|Are you a U.S. citizen?|			|Hispanic or Latino|	|Asian|		|Male|
+|Are you a party to a lawsuit?|		|Not Hispanic or Latino||White|		|Female|
+
+Scenario 24: News is published
+GIVEN that I am on the NEws tab
+AND I find that News 'Wealth Management Application" WMS Application has been submitted  for  <fName lName>-Account Number is - 544566457    New Product Details - Regular
+ ' is published
+
+Scenario 25: Risk Approval : Kim Brag[544566457] 
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Customer Acceptance and Verification: <fName lName> link
+THEN Customer Acceptance and Verification: <fName lName> form opens
+AND I click on Accept button
+THEN Customer Acceptance and Verification: <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Customer Acceptance and Verification: <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|						
+
+Scenario 26:Customer Identification & Verification: Kim Brag[544566457]
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Customer Identification and Verification: <fName lName> link
+THEN Customer Identification and Verification: <fName lName> form opens
+AND I click on Accept button
+THEN Customer Identification and Verification: <fName lName> form is enabled
+AND I select KYC Verification Status as <KycVeriStatus>
+AND I Enter Comment as <comment>
+AND I click on Approve button
+Then Customer Identification and Verification: <fName lName> is approved successfully.
+
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|			|KycVeriStatus|			|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|		|KYC Complete|			|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|			|KYC Expired|			|Complete|							
+
+Scenario 27:Credit Approval : Kim Brag[544566457]
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Credit Approval : <fName lName> link
+THEN Credit Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Credit Approval : <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Credit Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|							
+
+
+Scenario 28:Compliance Approval : Kim Brag[544566457]
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Compliance Approval : <fName lName> link
+THEN Compliance Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Compliance Approval : <fName lName> form is enabled
+AND I select Type of Business  as <businessType>
+AND Existing Customer as <existingCust>
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Compliance Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|businessType|	|existingCust|	|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|3|				|3|				|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|4|				|4|				|approved|							
+
+
+Scenario 29:LOB Approval : Kim Brag[544566457]
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on LOB Approval : <fName lName> link
+THEN LOB Approval : <fName lName> form opens
+AND I click on Accept button
+THEN LOB Approval : <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then LOB Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|							
+
+
+Scenario 30: Customer Acceptance and Verification: Kim Brag approval
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on Customer Acceptance and Verification: <fName lName> link
+THEN Customer Acceptance and Verification: <fName lName> form opens
+AND I click on Accept button
+THEN Customer Acceptance and Verification: <fName lName> form is enabled
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Customer Acceptance and Verification: <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|approved|						
+
+Scenario 31: KYC Review and Approval : Kim Brag[544566457]
+GIVEN that I am logged in to <url> on <browser>
+And I  enter Username as <Username>
+AND enters Password as <Password>
+AND click on Sign In
+Then login should be successful
+WHEN I am on Taks tab
+AND click on KYC Review and Approval : <fName lName> link
+THEN Risk Approval : <fName lName> form opens
+AND I click on Accept button
+THEN Risk Approval : <fName lName> form is enabled
+AND I select KYC Approval as <kycApproval>
+AND I Enter Comment as<comment>
+AND I click on Approve button
+Then Risk Approval : <fName lName> is approved successfully.
+
+Example:
+|url| 														|browser|		|Username|		|Password|		|fName|			|lName|		|kycApproval|	|comment|	
+|http://appian-demo.persistent.co.in:8080/suite/tempo|		|Mozilla|		|kyc.admin|		|kyc1234|		|Daniel|		|Gabriel|	|Approve|				|ok|	
+															|Chrome|		|kyc.admin|		|kyc1234|		|KiM|			|Brag|		|Reject|				|approved|							
+
+
+Scenario 32: Comment is added to News published
+GIVEN that I am on the NEws tab
+AND I find that Comment is added to published news as '
+Profile photo for KYC Admin
+Info Hazard
+
+
+KYC Admin WMS Application has been approved by Legal Officer -  KYC  Admin for  <fName lName>-Account Number - 544566457 Product Details - Regular
+ '
+ 
+															
+															
